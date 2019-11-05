@@ -6,7 +6,8 @@ require_relative '../lib/concerns/paramable'
 class Song
   attr_accessor :name
   attr_reader :artist
-
+  include Memorable::InstanceMethods
+  extend Memorable::ClassMethods
   @@songs = []
 
   def self.all
